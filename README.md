@@ -1,2 +1,2 @@
 # kanaria-tech.github.io
-Kanaria Tech webpage
+Kanaria Tech webpage: https://kanaria-tech.github.io
