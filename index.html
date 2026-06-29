@@ -3,13 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Your Name — Links</title>
-<meta name="description" content="Connect with me — all my links in one place." />
+<title>Kanaria Tech — Links</title>
+<meta name="description" content="Kanaria Tech — all our links in one place." />
 
-<!-- ============================================================= -->
-<!--  FONTS (these load from the internet; fine since the page is  -->
-<!--  hosted online anyway)                                        -->
-<!-- ============================================================= -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,14 +15,14 @@
      THEME — change --accent to rebrand the whole page in one go
      =========================================================== */
   :root {
-    --bg:        #E8EAEE;            /* page background */
-    --card:      #15181E;            /* the card itself */
-    --row:       #1E222B;            /* link rows */
+    --bg:        #E9EAEC;
+    --card:      #15181E;
+    --row:       #1E222B;
     --row-hover: #272D38;
     --line:      rgba(255,255,255,0.07);
     --text:      #F3F5F8;
     --muted:     #99A2B0;
-    --accent:    #5E6AD2;            /* << CHANGE THIS to your brand color */
+    --accent:    #E8552D;            /* Kanaria orange — change to rebrand */
     --on-accent: #FFFFFF;
     --radius:    18px;
   }
@@ -37,9 +33,8 @@
     min-height: 100dvh;
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     background: var(--bg);
-    /* soft light so the card feels lit from behind */
     background-image:
-      radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%);
+      radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 60%);
     color: var(--text);
     display: flex;
     justify-content: center;
@@ -54,7 +49,7 @@
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 26px;
-    padding: 28px 22px 22px;
+    padding: 30px 22px 22px;
     box-shadow:
       0 1px 0 rgba(255,255,255,0.04) inset,
       0 30px 60px -20px rgba(10,12,16,0.45),
@@ -63,45 +58,30 @@
   }
 
   /* ---------- header ---------- */
-  .head { text-align: center; margin-bottom: 22px; }
+  .head { text-align: center; margin-bottom: 24px; }
 
-  .avatar {
-    width: 84px; height: 84px;
-    margin: 0 auto 14px;
+  .logo {
+    width: 88px; height: 88px;
+    margin: 0 auto 16px;
     border-radius: 22px;
-    background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 90%, white), var(--accent));
+    background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 88%, white), var(--accent));
     display: flex; align-items: center; justify-content: center;
     font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 700; font-size: 32px; color: var(--on-accent);
-    letter-spacing: -0.5px;
-    box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    font-weight: 800; font-size: 40px; color: var(--on-accent);
+    letter-spacing: -1px;
+    box-shadow: 0 12px 26px -10px color-mix(in srgb, var(--accent) 70%, transparent);
     overflow: hidden;
   }
-  /* To use a photo/logo instead of initials, replace the text inside
-     .avatar with:  <img src="your-photo.jpg" alt="" /> */
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  /* To use your real logo image instead of the "K", replace the text
+     inside .logo with:  <img src="logo.png" alt="Kanaria Tech" />
+     (commit the image file to the repo alongside index.html) */
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
 
   .name {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 700; font-size: 26px; letter-spacing: -0.4px;
+    font-weight: 700; font-size: 30px; letter-spacing: -0.5px;
     line-height: 1.1;
   }
-  .role { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
-  .role b { color: var(--text); font-weight: 600; }
-
-  /* ---------- primary action ---------- */
-  .save {
-    display: flex; align-items: center; justify-content: center; gap: 9px;
-    width: 100%; margin: 20px 0 18px;
-    padding: 15px; border: none; cursor: pointer;
-    background: var(--accent); color: var(--on-accent);
-    font-family: inherit; font-size: 15px; font-weight: 600;
-    border-radius: var(--radius);
-    transition: transform .12s ease, filter .12s ease;
-  }
-  .save:hover { filter: brightness(1.07); }
-  .save:active { transform: scale(.98); }
-  .save svg { width: 18px; height: 18px; }
 
   /* ---------- link rows ---------- */
   .links { display: flex; flex-direction: column; gap: 9px; }
@@ -127,23 +107,34 @@
   .row:hover .ico { color: var(--text); }
   .row .ico svg { width: 22px; height: 22px; }
 
-  .row .label { flex: 1; font-size: 15px; font-weight: 500; }
-  .row .chev { color: var(--muted); opacity: .6; }
+  .row .label { flex: 1; font-size: 15px; font-weight: 500; line-height: 1.25; }
+  .row .label .sub { display: block; font-size: 12.5px; font-weight: 400; color: var(--muted); margin-top: 1px; }
+  .row .chev { color: var(--muted); opacity: .55; }
   .row .chev svg { width: 16px; height: 16px; display: block; }
 
-  /* stagger the rows so they fan in after the card lands */
-  .row:nth-child(1) { animation-delay: .18s; }
-  .row:nth-child(2) { animation-delay: .24s; }
-  .row:nth-child(3) { animation-delay: .30s; }
-  .row:nth-child(4) { animation-delay: .36s; }
-  .row:nth-child(5) { animation-delay: .42s; }
-  .row:nth-child(6) { animation-delay: .48s; }
-  .row:nth-child(7) { animation-delay: .54s; }
-  .row:nth-child(8) { animation-delay: .60s; }
+  /* stagger reveal */
+  .links .row:nth-child(1) { animation-delay: .16s; }
+  .links .row:nth-child(2) { animation-delay: .22s; }
+  .links .row:nth-child(3) { animation-delay: .28s; }
+  .links .row:nth-child(4) { animation-delay: .34s; }
+  .links .row:nth-child(5) { animation-delay: .40s; }
+
+  /* ---------- partners divider ---------- */
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    margin: 24px 2px 12px;
+  }
+  .section-label::before, .section-label::after {
+    content: ""; height: 1px; flex: 1; background: var(--line);
+  }
+  .section-label span {
+    font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+  }
 
   .foot {
     text-align: center; color: var(--muted);
-    font-size: 12px; margin-top: 20px; letter-spacing: .2px;
+    font-size: 12px; margin-top: 22px; letter-spacing: .2px;
   }
 
   /* ---------- motion ---------- */
@@ -166,120 +157,76 @@
 
     <!-- ====================== HEADER ====================== -->
     <header class="head">
-      <!-- Initials shown by default. Swap for <img src="..."> to use a photo/logo. -->
-      <div class="avatar">YN</div>
-      <h1 class="name">Your Name</h1>
-      <p class="role">Founder · <b>Your Company</b></p>
+      <!-- "K" monogram. Swap for <img src="logo.png" alt="Kanaria Tech"> to use the real logo. -->
+      <div class="logo">K</div>
+      <h1 class="name">Kanaria Tech</h1>
     </header>
 
-    <!-- ================ SAVE CONTACT (vCard) ============== -->
-    <!-- This downloads a contact card. Edit the details in the <script> at the bottom. -->
-    <button class="save" id="saveBtn" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-      Save my contact
-    </button>
-
-    <!-- ======================= LINKS ======================= -->
-    <!-- To edit: change the href="" and the text inside .label.
-         To remove a link: delete its whole <a>...</a> block.
-         To add one: copy a block, paste it, change the href, label, and icon. -->
+    <!-- ================== COMPANY LINKS =================== -->
+    <!-- Replace each href="" with your real URL. -->
     <nav class="links">
 
       <!-- Website -->
       <a class="row" href="https://www.kanaria.tech" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-        <span class="label">Company Website</span>
+        <span class="label">Website</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- Instagram -->
+      <!-- X / Twitter   <-- REPLACE HANDLE -->
+      <a class="row" href="https://x.com/kanariatech" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.34L23 22h-6.8l-5-6.86L5.5 22H2.3l7.8-8.92L1.6 2H8.6l4.6 6.27L18.9 2zm-2.4 17.5h1.74L7.6 4.4H5.74L16.5 19.5z"/></svg></span>
+        <span class="label">X (Twitter)</span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      </a>
+
+      <!-- Instagram   <-- REPLACE HANDLE -->
       <a class="row" href="https://instagram.com/kanaria.tech" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
         <span class="label">Instagram</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- LinkedIn -->
-      <a class="row" href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">
+      <!-- LinkedIn   <-- REPLACE WITH YOUR COMPANY PAGE -->
+      <a class="row" href="https://www.linkedin.com/company/kanaria-tech-inc" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.66V10.5H6.06v7.16h2.28zM7.2 9.43a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zM18 17.66v-3.92c0-2.1-.45-3.72-2.9-3.72-1.18 0-1.97.65-2.3 1.26h-.03V10.5H8.57v7.16h2.28v-3.54c0-.94.18-1.84 1.34-1.84 1.14 0 1.16 1.07 1.16 1.9v3.48H18z"/></svg></span>
         <span class="label">LinkedIn</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- X / Twitter -->
-      <a class="row" href="https://x.com/yourhandle" target="_blank" rel="noopener">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.34L23 22h-6.8l-5-6.86L5.5 22H2.3l7.8-8.92L1.6 2H8.6l4.6 6.27L18.9 2zm-2.4 17.5h1.74L7.6 4.4H5.74L16.5 19.5z"/></svg></span>
-        <span class="label">X (Twitter)</span>
-        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
-      </a>
-
-      <!-- WhatsApp (replace the number, keep the format) -->
-      <a class="row" href="https://wa.me/1234567890" target="_blank" rel="noopener">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .87.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.13c-.25-.13-1.48-.73-1.7-.82-.23-.08-.4-.12-.56.13-.16.25-.64.81-.78.98-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.42.25-.4.71-1.3.08-.17.04-.3-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.4-.42-.56-.42l-.48-.01a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.76 2.67 4.26 3.74.6.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.19.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></span>
-        <span class="label">WhatsApp</span>
-        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
-      </a>
-
-      <!-- Email -->
-      <a class="row" href="mailto:you@email.com">
+      <!-- Email   <-- CONFIRM/REPLACE the address -->
+      <a class="row" href="mailto:office@kanaria.tech">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
-        <span class="label">Email me</span>
-        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
-      </a>
-
-      <!-- Phone -->
-      <a class="row" href="tel:+1234567890">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <span class="label">Call me</span>
+        <span class="label">Email us</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
     </nav>
 
-    <p class="foot">Tap any link to connect</p>
+    <!-- ====================== PARTNERS ===================== -->
+    <div class="section-label"><span>Partners</span></div>
+
+    <nav class="links">
+      <!-- AI Agents partner — Xpress AI -->
+      <a class="row" href="https://xpress.ai" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+        <span class="label">Xpress AI<span class="sub">AI Agents</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      </a>
+      
+      <!-- 3D Printing partner (Instagram)   <-- REPLACE HANDLE -->
+      <a class="row" href="https://instagram.com/bear_lenciaga" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="label">3D Printing<span class="sub">on Instagram</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      </a>
+
+
+
+    </nav>
+
+    <p class="foot">© Kanaria Tech</p>
   </main>
 
-<script>
-  /* ============================================================
-     SAVE CONTACT — edit your details here.
-     When someone taps "Save my contact", their phone offers to
-     add you to their address book.
-     ============================================================ */
-  const contact = {
-    firstName: "Your",
-    lastName:  "Name",
-    org:       "Your Company",
-    title:     "Founder",
-    phone:     "+1234567890",
-    email:     "you@email.com",
-    website:   "https://yourwebsite.com"
-  };
-
-  document.getElementById("saveBtn").addEventListener("click", function () {
-    const c = contact;
-    const vcard = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "N:" + c.lastName + ";" + c.firstName + ";;;",
-      "FN:" + c.firstName + " " + c.lastName,
-      "ORG:" + c.org,
-      "TITLE:" + c.title,
-      "TEL;TYPE=CELL:" + c.phone,
-      "EMAIL:" + c.email,
-      "URL:" + c.website,
-      "END:VCARD"
-    ].join("\n");
-
-    const blob = new Blob([vcard], { type: "text/vcard" });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement("a");
-    a.href = url;
-    a.download = (c.firstName + "_" + c.lastName + ".vcf");
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
-</script>
 </body>
 </html>
