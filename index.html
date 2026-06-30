@@ -57,31 +57,26 @@
     animation: cardIn 0.7s cubic-bezier(.16,1,.3,1) both;
   }
 
-  /* ---------- header ---------- */
-  .head { text-align: center; margin-bottom: 24px; }
+  /* ---------- header: Kanaria [logo] Tech lockup ---------- */
+  .head { margin-bottom: 26px; }
 
-  .logo {
-    width: 88px; height: 88px;
-    margin: 0 auto 16px;
-    border-radius: 22px;
-    background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 88%, white), var(--accent));
+  .brand {
     display: flex; align-items: center; justify-content: center;
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 800; font-size: 40px; color: var(--on-accent);
-    letter-spacing: -1px;
-    box-shadow: 0 12px 26px -10px color-mix(in srgb, var(--accent) 70%, transparent);
-    overflow: hidden;
+    gap: 14px;
   }
-  /* To use your real logo image instead of the "K", replace the text
-     inside .logo with:  <img src="logo.png" alt="Kanaria Tech" />
-     (commit the image file to the repo alongside index.html) */
-  .logo img { width: 100%; height: 100%; object-fit: cover; }
-
-  .name {
+  .brand-name {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 700; font-size: 30px; letter-spacing: -0.5px;
-    line-height: 1.1;
+    font-weight: 700; font-size: 28px; letter-spacing: -0.5px;
+    color: var(--text); line-height: 1;
   }
+  .brand-logo {
+    width: 60px; height: 60px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* The logo floats directly on the card. If your PNG has a solid/white
+     background instead of transparency and you'd prefer a rounded badge,
+     add to .brand-logo:  background:#fff; border-radius:16px; padding:8px; */
+  .brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
   /* ---------- link rows ---------- */
   .links { display: flex; flex-direction: column; gap: 9px; }
@@ -118,6 +113,7 @@
   .links .row:nth-child(3) { animation-delay: .28s; }
   .links .row:nth-child(4) { animation-delay: .34s; }
   .links .row:nth-child(5) { animation-delay: .40s; }
+  .links .row:nth-child(6) { animation-delay: .46s; }
 
   /* ---------- partners divider ---------- */
   .section-label {
@@ -157,9 +153,11 @@
 
     <!-- ====================== HEADER ====================== -->
     <header class="head">
-      <!-- "K" monogram. Swap for <img src="logo.png" alt="Kanaria Tech"> to use the real logo. -->
-      <div class="logo">K</div>
-      <h1 class="name">Kanaria Tech</h1>
+      <div class="brand">
+        <span class="brand-name">Kanaria</span>
+        <span class="brand-logo"><img src="kanaria-logo.png" alt="Kanaria Tech" /></span>
+        <span class="brand-name">Tech</span>
+      </div>
     </header>
 
     <!-- ================== COMPANY LINKS =================== -->
@@ -173,28 +171,35 @@
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- X / Twitter   <-- REPLACE HANDLE -->
+      <!-- X / Twitter -->
       <a class="row" href="https://x.com/kanariatech" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.34L23 22h-6.8l-5-6.86L5.5 22H2.3l7.8-8.92L1.6 2H8.6l4.6 6.27L18.9 2zm-2.4 17.5h1.74L7.6 4.4H5.74L16.5 19.5z"/></svg></span>
         <span class="label">X (Twitter)</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- Instagram   <-- REPLACE HANDLE -->
+      <!-- Instagram -->
       <a class="row" href="https://instagram.com/kanaria.tech" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
         <span class="label">Instagram</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- LinkedIn   <-- REPLACE WITH YOUR COMPANY PAGE -->
+      <!-- YouTube   <-- REPLACE HANDLE -->
+      <a class="row" href="https://youtube.com/@YOUR_YOUTUBE_HANDLE" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg></span>
+        <span class="label">YouTube</span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      </a>
+
+      <!-- LinkedIn -->
       <a class="row" href="https://www.linkedin.com/company/kanaria-tech-inc" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.66V10.5H6.06v7.16h2.28zM7.2 9.43a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zM18 17.66v-3.92c0-2.1-.45-3.72-2.9-3.72-1.18 0-1.97.65-2.3 1.26h-.03V10.5H8.57v7.16h2.28v-3.54c0-.94.18-1.84 1.34-1.84 1.14 0 1.16 1.07 1.16 1.9v3.48H18z"/></svg></span>
         <span class="label">LinkedIn</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
 
-      <!-- Email   <-- CONFIRM/REPLACE the address -->
+      <!-- Email -->
       <a class="row" href="mailto:office@kanaria.tech">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
         <span class="label">Email us</span>
@@ -213,15 +218,13 @@
         <span class="label">Xpress AI<span class="sub">AI Agents</span></span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
-      
-      <!-- 3D Printing partner (Instagram)   <-- REPLACE HANDLE -->
+
+      <!-- 3D Printing partner (Instagram) -->
       <a class="row" href="https://instagram.com/bear_lenciaga" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
         <span class="label">3D Printing<span class="sub">bear_lenciaga</span></span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>
-
-
 
     </nav>
 
